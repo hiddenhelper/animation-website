@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 
 class HomePage extends Component {
   render() {
-    const pageType = "About";
+    const pageType = "Home";
     return (
       <Fragment>
         <Navbar pageType={pageType} />

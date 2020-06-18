@@ -12,7 +12,7 @@ p {
 nav {
   display: flex;
   padding: 2rem 0;
-  background: #aaa;
+  text-align: center;
 }
 
 nav section {
@@ -128,4 +128,16 @@ html {
   src: url(assets/font/CircularStd/CircularStd-Black.otf) format("otf"),
     url(assets/font/CircularStd/CircularStd-Bold.otf) format("otf"),
     url(assets/font/CircularStd/CircularStd-BlackItalic.otf) format("otf");
+}
+
+.navHome,
+.navAbout {
+  background-image: url("./assets/Img/BG.png");
+}
+.navHome Link {
+  color: white !important;
+}
+
+.navBook {
+  background-image: url("./assets/Img/BG1.png");
 }
