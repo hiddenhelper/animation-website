@@ -1,49 +1,58 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = (pageType) => {
+const Navbar = ({ pageType }) => {
   var navType = "navHome";
-  if ((pageType = "About")) {
+  var navLinkType = "navHomeLink";
+  if (pageType === "About") {
     navType = "navAbout";
-    return (
-      <nav className={navType}>
-        <section>
-          <Link to="/About">ABOUT</Link>
-          <Link to="/Book">THE BOOK</Link>
-          <Link to="/Contact">CONTACT</Link>
-        </section>
-      </nav>
-    );
-  } else if ((pageType = "Book")) {
+    navLinkType = "navAboutLink";
+  } else if (pageType === "Book") {
     navType = "navBook";
-    return (
-      <nav className={navType}>
-        <section>
-          <Link to="/About">ABOUT</Link>
-          <Link to="/Book">THE BOOK</Link>
-          <Link to="/Contact">CONTACT</Link>
-        </section>
-      </nav>
-    );
-  } else if ((pageType = "Contact")) {
+    navLinkType = "navBookLink";
+  } else if (pageType === "Contact") {
     navType = "navContact";
-    return (
-      <nav className={navType}>
-        <section>
-          <Link to="/About">ABOUT</Link>
-          <Link to="/Book">THE BOOK</Link>
-          <Link to="/Contact">CONTACT</Link>
-        </section>
-      </nav>
-    );
+    navLinkType = "navContactLink";
   }
 
   return (
     <nav className={navType}>
       <section>
-        <Link to="/About">ABOUT</Link>
-        <Link to="/Book">THE BOOK</Link>
-        <Link to="/Contact">CONTACT</Link>
+        <div className="navBarDisplay">
+          <div className={pageType === "Home" ? "navItemDiv" : ""}>
+            <Link
+              to="/About"
+              className={navLinkType}
+              style={{
+                textDecoration: navType === "navAbout" ? "underline" : "none",
+              }}
+            >
+              ABOUT
+            </Link>
+          </div>
+          <div className={pageType === "Home" ? "navItemDiv" : ""}>
+            <Link
+              to="/Book"
+              className={navLinkType}
+              style={{
+                textDecoration: navType === "navBook" ? "underline" : "none",
+              }}
+            >
+              THE BOOK
+            </Link>
+          </div>
+          <div className={pageType === "Home" ? "navItemDiv" : ""}>
+            <Link
+              to="/Contact"
+              className={navLinkType}
+              style={{
+                textDecoration: navType === "navContact" ? "underline" : "none",
+              }}
+            >
+              CONTACT
+            </Link>
+          </div>
+        </div>
       </section>
     </nav>
   );

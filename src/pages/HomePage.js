@@ -1,18 +1,24 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import HomeLogo from "../assets/Img/LOGO.png";
+import { Link } from "react-router-dom";
 
 class HomePage extends Component {
   render() {
     const pageType = "Home";
     return (
-      <Fragment>
+      <div className="Page">
         <Navbar pageType={pageType} />
-        <section className="homeSection">
-          <div className="center">
-            <h2 className="center">This is the dashboard.</h2>
+        <div className="HomeSection">
+          <div className="Logo1Div">
+            <Link to="/About">
+              <img src={HomeLogo} alt="logo" class="Logo1Style" />
+            </Link>
           </div>
-        </section>
-      </Fragment>
+        </div>
+        <Footer pageType={pageType} />
+      </div>
     );
   }
 }

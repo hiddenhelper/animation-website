@@ -13,6 +13,8 @@ nav {
   display: flex;
   padding: 2rem 0;
   text-align: center;
+  height: 20px;
+  max-height: 20px;
 }
 
 nav section {
@@ -23,10 +25,6 @@ nav a {
   font-weight: 700;
   padding: 1rem 1.5rem;
   border-radius: 4px;
-}
-
-nav a:first-of-type {
-  margin-left: -1.5rem;
 }
 
 /* nav a:hover {
@@ -87,21 +85,82 @@ html {
   height: 100%;
   margin: 0;
 }
-.homeSection {
-  background-image: url(/asserts/img/back.png);
-  height: 100vh;
+.HomeSection {
+  background-image: url(./assets/Img/BG.png);
+  height: calc(100vh - 8rem - 40px);
   margin: 0;
   padding: 0;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   max-width: unset;
-}
-.center {
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 200px;
+}
+
+.Logo1Div {
+  overflow: hidden;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+.Logo1Style {
+  width: 90%;
+  padding: 0% 5%;
+  text-align: center;
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.AboutSection {
+  background-image: url(./assets/Img/BG.png);
+  height: calc(100vh - 8rem - 40px);
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: unset;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.BookSection {
+  height: calc(100vh - 8rem - 40px);
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: unset;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ContactSection {
+  background-image: url(./assets/Img/BG1.png);
+  height: calc(100vh - 8rem - 40px);
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: unset;
 }
 
 .CenterScreen {
@@ -134,10 +193,81 @@ html {
 .navAbout {
   background-image: url("./assets/Img/BG.png");
 }
-.navHome Link {
-  color: white !important;
+
+.navContact {
+  background-image: url("./assets/Img/BG1.png");
 }
 
-.navBook {
+.navBarDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.navHomeLink {
+  color: white;
+}
+.navAboutLink {
+  color: white;
+}
+.navBookLink {
+  color: rgb(40, 184, 211);
+}
+.navContactLink {
+  color: rgb(3, 51, 76);
+}
+
+.navItemDiv {
+  position: relative;
+  display: block;
+}
+
+.navHomeLink::after {
+  content: "";
+  position: absolute;
+}
+
+.navItemDiv .navHomeLink::after {
+  top: 90%;
+  height: 2px;
+  width: 0%;
+  left: 24px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: 0.5s ease all 0.3s;
+}
+
+.navItemDiv:hover .navHomeLink::after {
+  width: calc(100% - 48px);
+  transition: 0.3s ease all;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.HomeFooterDiv,
+.AboutFooterDiv {
+  display: flex;
+  padding: 2rem 0;
+  text-align: center;
+  height: 20px;
+  max-height: 20px;
+  justify-content: center;
+  background-image: url("./assets/Img/BG.png");
+}
+.BookFooterDiv {
+  display: flex;
+  padding: 2rem 0;
+  text-align: center;
+  height: 20px;
+  max-height: 20px;
+  justify-content: center;
+}
+.ContactFooterDiv {
+  display: flex;
+  padding: 2rem 0;
+  text-align: center;
+  height: 20px;
+  max-height: 20px;
+  justify-content: center;
   background-image: url("./assets/Img/BG1.png");
+}
+.footerItem {
+  padding: 0px 5px;
 }
