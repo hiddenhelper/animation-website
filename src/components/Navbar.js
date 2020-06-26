@@ -21,7 +21,7 @@ const Navbar = ({ pageType }) => {
         <div className="navBarDisplay">
           <div className={pageType === "Home" ? "navItemDiv" : ""}>
             <Link
-              to="/About"
+              to="/about"
               className={navLinkType}
               style={{
                 textDecoration: navType === "navAbout" ? "underline" : "none",
@@ -32,7 +32,7 @@ const Navbar = ({ pageType }) => {
           </div>
           <div className={pageType === "Home" ? "navItemDiv" : ""}>
             <Link
-              to="/Book"
+              to="/the-book"
               className={navLinkType}
               style={{
                 textDecoration: navType === "navBook" ? "underline" : "none",
@@ -43,7 +43,7 @@ const Navbar = ({ pageType }) => {
           </div>
           <div className={pageType === "Home" ? "navItemDiv" : ""}>
             <Link
-              to="/Contact"
+              to="/contact"
               className={navLinkType}
               style={{
                 textDecoration: navType === "navContact" ? "underline" : "none",
